@@ -18,8 +18,8 @@ await dbMemos.connect(`http://${process.env.DB_IP_PORT}/rpc`, {
   database: process.env.RESOURCES_DB_ID as string,
   namespace: process.env.RESOURCES_DB_ID as string,
   auth: {
-    password: process.env.DB_USER as string,
-    username: process.env.DB_PASSWORD as string,
+    password: process.env.DB_PASSWORD as string,
+    username: process.env.DB_USER as string,
     database: process.env.RESOURCES_DB_ID as string,
     namespace: process.env.RESOURCES_DB_ID as string,
     scopes: ["*"],
