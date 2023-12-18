@@ -3,14 +3,25 @@ import type { RawQueryResult } from "node_modules/surrealdb.js/esm/types";
 import { Surreal } from "surrealdb.js";
 
 const dbMemos = new Surreal();
-await dbMemos.connect("http://0.0.0.0:3002/rpc", {
-  database: "memos",
-  namespace: "memos",
+console.log({
+  database: process.env.RESOURCES_DB_ID as string,
+  namespace: process.env.RESOURCES_DB_ID as string,
   auth: {
-    password: "root",
-    username: "root",
-    database: "memos",
-    namespace: "memos",
+    password: process.env.DB_PASSWORD as string,
+    username: process.env.DB_USER as string,
+    database: process.env.RESOURCES_DB_ID as string,
+    namespace: process.env.RESOURCES_DB_ID as string,
+    scopes: ["*"],
+  },
+});
+await dbMemos.connect(`http://${process.env.DB_IP_PORT}/rpc`, {
+  database: process.env.RESOURCES_DB_ID as string,
+  namespace: process.env.RESOURCES_DB_ID as string,
+  auth: {
+    password: process.env.DB_USER as string,
+    username: process.env.DB_PASSWORD as string,
+    database: process.env.RESOURCES_DB_ID as string,
+    namespace: process.env.RESOURCES_DB_ID as string,
     scopes: ["*"],
   },
 });
