@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: var(--font-text);
+}
+h1 {
+  font-family: var(--font-montserrat);
+}
+h2,
+h3 {
+  font-family: var(--font-lora);
+}
+body {
+  font-family: var(--font-text);
+}
