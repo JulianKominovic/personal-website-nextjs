@@ -74,7 +74,7 @@ export function ActivityHistory({ history }: ActivityHistoryProps) {
               className="group relative rounded-md border border-neutral-200 dark:border-neutral-700"
               style={{
                 background: `hsl(142deg 50% ${
-                  100 - 80 * dayActivitiesPercentage
+                  100 - 60 * dayActivitiesPercentage
                 }%)`,
               }}
             ></button>

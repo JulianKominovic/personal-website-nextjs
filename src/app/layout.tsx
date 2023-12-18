@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Montserrat,
-  Lora,
-  Numans,
-  Inter,
-  Fira_Sans,
-  Mulish,
-} from "next/font/google";
+import { Montserrat, Lora, Mulish } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import Header from "@/layout/header";
@@ -53,7 +46,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/jk-og.png",
+        url: "https://jkominovic.dev/jk-og.png",
         width: 1200,
         height: 630,
         alt: "Julian Kominovic - Frontend Developer",
@@ -70,7 +63,7 @@ export const metadata: Metadata = {
       "Frontend developer. Average rust enjoyer. Right now getting into local-first applications. See my projects, blog posts and resources.",
     images: [
       {
-        url: "/jk-og.png",
+        url: "https://jkominovic.dev/jk-og.png",
         width: 1200,
         height: 630,
         alt: "Julian Kominovic - Frontend Developer",

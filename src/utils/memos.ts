@@ -16,7 +16,7 @@ export function buildHistoricalActivityRecord(
     }/${date.getDate()}`;
 
     if (records[dateRecordEntry] === undefined) {
-      records[dateRecordEntry] = 0;
+      records[dateRecordEntry] = 1;
     } else {
       records[dateRecordEntry]++;
     }
