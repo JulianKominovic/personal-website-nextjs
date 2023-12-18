@@ -34,6 +34,7 @@ const text = Mulish({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jkominovic.dev"),
   title: "Julian Kominovic - Frontend Developer",
   description:
     "Frontend developer. Average rust enjoyer. Right now getting into local-first applications. See my projects, blog posts and resources.",
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://jkominovic.dev/jk-og.png",
+        url: "/jk-og.png",
         width: 1200,
         height: 630,
         alt: "Julian Kominovic - Frontend Developer",
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
       "Frontend developer. Average rust enjoyer. Right now getting into local-first applications. See my projects, blog posts and resources.",
     images: [
       {
-        url: "https://jkominovic.dev/jk-og.png",
+        url: "/jk-og.png",
         width: 1200,
         height: 630,
         alt: "Julian Kominovic - Frontend Developer",
@@ -77,6 +78,7 @@ export const metadata: Metadata = {
   },
   other: {
     "twitter:widgets:autoload": "off",
+    "twitter:dnt": "on",
   },
 };
 

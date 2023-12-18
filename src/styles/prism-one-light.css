@@ -1,0 +1,485 @@
+.memo-content-wrapper {
+  /**
+   * One Light theme for prism.js
+   * Based on Atom's One Light theme: https://github.com/atom/atom/tree/master/packages/one-light-syntax
+   */
+  /**
+   * One Light colours (accurate as of commit eb064bf on 19 Feb 2021)
+   * From colors.less
+   * --mono-1: hsl(230, 8%, 24%);
+   * --mono-2: hsl(230, 6%, 44%);
+   * --mono-3: hsl(230, 4%, 64%)
+   * --hue-1: hsl(198, 99%, 37%);
+   * --hue-2: hsl(221, 87%, 60%);
+   * --hue-3: hsl(301, 63%, 40%);
+   * --hue-4: hsl(119, 34%, 47%);
+   * --hue-5: hsl(5, 74%, 59%);
+   * --hue-5-2: hsl(344, 84%, 43%);
+   * --hue-6: hsl(35, 99%, 36%);
+   * --hue-6-2: hsl(35, 99%, 40%);
+   * --syntax-fg: hsl(230, 8%, 24%);
+   * --syntax-bg: hsl(230, 1%, 98%);
+   * --syntax-gutter: hsl(230, 1%, 62%);
+   * --syntax-guide: hsla(230, 8%, 24%, 0.2);
+   * --syntax-accent: hsl(230, 100%, 66%);
+   * From syntax-variables.less
+   * --syntax-selection-color: hsl(230, 1%, 90%);
+   * --syntax-gutter-background-color-selected: hsl(230, 1%, 90%);
+   * --syntax-cursor-line: hsla(230, 8%, 24%, 0.05);
+   */
+}
+.memo-content-wrapper code[class*="language-"],
+.memo-content-wrapper pre[class*="language-"] {
+  background: #fafafa;
+  color: #383a42;
+  font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono",
+    monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  /* Selection */
+}
+.memo-content-wrapper code[class*="language-"]::-moz-selection,
+.memo-content-wrapper code[class*="language-"] *::-moz-selection,
+.memo-content-wrapper pre[class*="language-"] *::-moz-selection {
+  background: #e5e5e6;
+  color: inherit;
+}
+.memo-content-wrapper code[class*="language-"]::selection,
+.memo-content-wrapper code[class*="language-"] *::selection,
+.memo-content-wrapper pre[class*="language-"] *::selection {
+  background: #e5e5e6;
+  color: inherit;
+  /* Code blocks */
+}
+.memo-content-wrapper pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+  /* Inline code */
+}
+.memo-content-wrapper :not(pre) > code[class*="language-"] {
+  padding: 0.2em 0.3em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+.memo-content-wrapper .token.comment,
+.memo-content-wrapper .token.prolog,
+.memo-content-wrapper .token.cdata {
+  color: #a0a1a7;
+}
+.memo-content-wrapper .token.doctype,
+.memo-content-wrapper .token.punctuation,
+.memo-content-wrapper .token.entity {
+  color: #383a42;
+}
+.memo-content-wrapper .token.attr-name,
+.memo-content-wrapper .token.class-name,
+.memo-content-wrapper .token.boolean,
+.memo-content-wrapper .token.constant,
+.memo-content-wrapper .token.number,
+.memo-content-wrapper .token.atrule {
+  color: #b76b01;
+}
+.memo-content-wrapper .token.keyword {
+  color: #a626a4;
+}
+.memo-content-wrapper .token.property,
+.memo-content-wrapper .token.tag,
+.memo-content-wrapper .token.symbol,
+.memo-content-wrapper .token.deleted,
+.memo-content-wrapper .token.important {
+  color: #e45649;
+}
+.memo-content-wrapper .token.selector,
+.memo-content-wrapper .token.string,
+.memo-content-wrapper .token.char,
+.memo-content-wrapper .token.builtin,
+.memo-content-wrapper .token.inserted,
+.memo-content-wrapper .token.regex,
+.memo-content-wrapper .token.attr-value,
+.memo-content-wrapper .token.attr-value > .token.punctuation {
+  color: #50a14f;
+}
+.memo-content-wrapper .token.variable,
+.memo-content-wrapper .token.operator,
+.memo-content-wrapper .token.function {
+  color: #4078f2;
+}
+.memo-content-wrapper .token.url {
+  color: #0184bc;
+  /* HTML overrides */
+}
+.memo-content-wrapper .token.attr-value > .token.punctuation.attr-equals,
+.memo-content-wrapper
+  .token.special-attr
+  > .token.attr-value
+  > .token.value.css {
+  color: #383a42;
+  /* CSS overrides */
+}
+.memo-content-wrapper .language-css .token.selector {
+  color: #e45649;
+}
+.memo-content-wrapper .language-css .token.property {
+  color: #383a42;
+}
+.memo-content-wrapper .language-css .token.function,
+.memo-content-wrapper .language-css .token.url > .token.function {
+  color: #0184bc;
+}
+.memo-content-wrapper .language-css .token.url > .token.string.url {
+  color: #50a14f;
+}
+.memo-content-wrapper .language-css .token.important,
+.memo-content-wrapper .language-css .token.atrule .token.rule {
+  color: #a626a4;
+  /* JS overrides */
+}
+.memo-content-wrapper .language-javascript .token.operator {
+  color: #a626a4;
+}
+.memo-content-wrapper
+  .language-javascript
+  .token.template-string
+  > .token.interpolation
+  > .token.interpolation-punctuation.punctuation {
+  color: #ca1243;
+  /* JSON overrides */
+}
+.memo-content-wrapper .language-json .token.operator {
+  color: #383a42;
+}
+.memo-content-wrapper .language-json .token.null.keyword {
+  color: #b76b01;
+  /* MD overrides */
+}
+.memo-content-wrapper .language-markdown .token.url,
+.memo-content-wrapper .language-markdown .token.url > .token.operator,
+.memo-content-wrapper
+  .language-markdown
+  .token.url-reference.url
+  > .token.string {
+  color: #383a42;
+}
+.memo-content-wrapper .language-markdown .token.url > .token.content {
+  color: #4078f2;
+}
+.memo-content-wrapper .language-markdown .token.url > .token.url,
+.memo-content-wrapper .language-markdown .token.url-reference.url {
+  color: #0184bc;
+}
+.memo-content-wrapper .language-markdown .token.blockquote.punctuation,
+.memo-content-wrapper .language-markdown .token.hr.punctuation {
+  color: #a0a1a7;
+  font-style: italic;
+}
+.memo-content-wrapper .language-markdown .token.code-snippet {
+  color: #50a14f;
+}
+.memo-content-wrapper .language-markdown .token.bold .token.content {
+  color: #b76b01;
+}
+.memo-content-wrapper .language-markdown .token.italic .token.content {
+  color: #a626a4;
+}
+.memo-content-wrapper .language-markdown .token.strike .token.content,
+.memo-content-wrapper .language-markdown .token.strike .token.punctuation,
+.memo-content-wrapper .language-markdown .token.list.punctuation,
+.memo-content-wrapper
+  .language-markdown
+  .token.title.important
+  > .token.punctuation {
+  color: #e45649;
+  /* General */
+}
+.memo-content-wrapper .token.bold {
+  font-weight: bold;
+}
+.memo-content-wrapper .token.comment,
+.memo-content-wrapper .token.italic {
+  font-style: italic;
+}
+.memo-content-wrapper .token.entity {
+  cursor: help;
+}
+.memo-content-wrapper .token.namespace {
+  opacity: 0.8;
+  /* Plugin overrides */
+  /* Selectors should have higher specificity than those in the plugins' default stylesheets */
+  /* Show Invisibles plugin overrides */
+}
+.memo-content-wrapper .token.token.tab:not(:empty):before,
+.memo-content-wrapper .token.token.cr:before,
+.memo-content-wrapper .token.token.lf:before,
+.memo-content-wrapper .token.token.space:before {
+  color: rgba(56, 58, 66, 0.2);
+  /* Toolbar plugin overrides */
+  /* Space out all buttons and move them away from the right edge of the code block */
+}
+.memo-content-wrapper div.code-toolbar > .toolbar.toolbar > .toolbar-item {
+  margin-right: 0.4em;
+  /* Styling the buttons */
+}
+.memo-content-wrapper
+  div.code-toolbar
+  > .toolbar.toolbar
+  > .toolbar-item
+  > button,
+.memo-content-wrapper div.code-toolbar > .toolbar.toolbar > .toolbar-item > a,
+.memo-content-wrapper
+  div.code-toolbar
+  > .toolbar.toolbar
+  > .toolbar-item
+  > span {
+  background: #e5e5e6;
+  color: #696c77;
+  padding: 0.1em 0.4em;
+  border-radius: 0.3em;
+}
+.memo-content-wrapper
+  div.code-toolbar
+  > .toolbar.toolbar
+  > .toolbar-item
+  > button:hover,
+.memo-content-wrapper
+  div.code-toolbar
+  > .toolbar.toolbar
+  > .toolbar-item
+  > button:focus,
+.memo-content-wrapper
+  div.code-toolbar
+  > .toolbar.toolbar
+  > .toolbar-item
+  > a:hover,
+.memo-content-wrapper
+  div.code-toolbar
+  > .toolbar.toolbar
+  > .toolbar-item
+  > a:focus,
+.memo-content-wrapper
+  div.code-toolbar
+  > .toolbar.toolbar
+  > .toolbar-item
+  > span:hover,
+.memo-content-wrapper
+  div.code-toolbar
+  > .toolbar.toolbar
+  > .toolbar-item
+  > span:focus {
+  background: #c6c7c7;
+  /* custom: darken(--syntax-bg, 20%) */
+  color: #383a42;
+  /* Line Highlight plugin overrides */
+  /* The highlighted line itself */
+}
+.memo-content-wrapper .line-highlight.line-highlight {
+  background: rgba(56, 58, 66, 0.05);
+  /* Default line numbers in Line Highlight plugin */
+}
+.memo-content-wrapper .line-highlight.line-highlight:before,
+.memo-content-wrapper .line-highlight.line-highlight[data-end]:after {
+  background: #e5e5e6;
+  color: #383a42;
+  padding: 0.1em 0.6em;
+  border-radius: 0.3em;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  /* same as Toolbar plugin default */
+  /* Hovering over a linkable line number (in the gutter area) */
+  /* Requires Line Numbers plugin as well */
+}
+.memo-content-wrapper
+  pre[id].linkable-line-numbers.linkable-line-numbers
+  span.line-numbers-rows
+  > span:hover:before {
+  background-color: rgba(56, 58, 66, 0.05);
+  /* Line Numbers and Command Line plugins overrides */
+  /* Line separating gutter from coding area */
+}
+.memo-content-wrapper .line-numbers.line-numbers .line-numbers-rows,
+.memo-content-wrapper .command-line .command-line-prompt {
+  border-right-color: rgba(56, 58, 66, 0.2);
+  /* Stuff in the gutter */
+}
+.memo-content-wrapper .line-numbers .line-numbers-rows > span:before,
+.memo-content-wrapper .command-line .command-line-prompt > span:before {
+  color: #9d9d9f;
+  /* Match Braces plugin overrides */
+  /* Note: Outline colour is inherited from the braces */
+}
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-1,
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-5,
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-9 {
+  color: #e45649;
+}
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-2,
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-6,
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-10 {
+  color: #50a14f;
+}
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-3,
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-7,
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-11 {
+  color: #4078f2;
+}
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-4,
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-8,
+.memo-content-wrapper .rainbow-braces .token.token.punctuation.brace-level-12 {
+  color: #a626a4;
+  /* Diff Highlight plugin overrides */
+  /* Taken from https://github.com/atom/github/blob/master/styles/variables.less */
+}
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.deleted:not(.prefix),
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.deleted:not(.prefix) {
+  background-color: rgba(255, 82, 102, 0.15);
+}
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.deleted:not(.prefix)::-moz-selection,
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.deleted:not(.prefix)
+  *::-moz-selection,
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.deleted:not(.prefix)::-moz-selection,
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.deleted:not(.prefix)
+  *::-moz-selection {
+  background-color: rgba(251, 86, 105, 0.25);
+}
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.deleted:not(.prefix)::selection,
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.deleted:not(.prefix)
+  *::selection,
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.deleted:not(.prefix)::selection,
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.deleted:not(.prefix)
+  *::selection {
+  background-color: rgba(251, 86, 105, 0.25);
+}
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.inserted:not(.prefix),
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.inserted:not(.prefix) {
+  background-color: rgba(26, 255, 91, 0.15);
+}
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.inserted:not(.prefix)::-moz-selection,
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.inserted:not(.prefix)
+  *::-moz-selection,
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.inserted:not(.prefix)::-moz-selection,
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.inserted:not(.prefix)
+  *::-moz-selection {
+  background-color: rgba(56, 224, 98, 0.25);
+}
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.inserted:not(.prefix)::selection,
+.memo-content-wrapper
+  pre.diff-highlight
+  > code
+  .token.token.inserted:not(.prefix)
+  *::selection,
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.inserted:not(.prefix)::selection,
+.memo-content-wrapper
+  pre
+  > code.diff-highlight
+  .token.token.inserted:not(.prefix)
+  *::selection {
+  background-color: rgba(56, 224, 98, 0.25);
+  /* Previewers plugin overrides */
+  /* Based on https://github.com/atom-community/atom-ide-datatip/blob/master/styles/atom-ide-datatips.less and https://github.com/atom/atom/blob/master/packages/one-light-ui */
+  /* Border around popup */
+}
+.memo-content-wrapper .prism-previewer.prism-previewer:before,
+.memo-content-wrapper .prism-previewer-gradient.prism-previewer-gradient div {
+  border-color: #f2f2f2;
+  /* Angle and time should remain as circles and are hence not included */
+}
+.memo-content-wrapper .prism-previewer-color.prism-previewer-color:before,
+.memo-content-wrapper .prism-previewer-gradient.prism-previewer-gradient div,
+.memo-content-wrapper .prism-previewer-easing.prism-previewer-easing:before {
+  border-radius: 0.3em;
+  /* Triangles pointing to the code */
+}
+.memo-content-wrapper .prism-previewer.prism-previewer:after {
+  border-top-color: #f2f2f2;
+}
+.memo-content-wrapper .prism-previewer-flipped.prism-previewer-flipped.after {
+  border-bottom-color: #f2f2f2;
+  /* Background colour within the popup */
+}
+.memo-content-wrapper .prism-previewer-angle.prism-previewer-angle:before,
+.memo-content-wrapper .prism-previewer-time.prism-previewer-time:before,
+.memo-content-wrapper .prism-previewer-easing.prism-previewer-easing {
+  background: white;
+  /* For angle, this is the positive area (eg. 90deg will display one quadrant in this colour) */
+  /* For time, this is the alternate colour */
+}
+.memo-content-wrapper .prism-previewer-angle.prism-previewer-angle circle,
+.memo-content-wrapper .prism-previewer-time.prism-previewer-time circle {
+  stroke: #383a42;
+  stroke-opacity: 1;
+  /* Stroke colours of the handle, direction point, and vector itself */
+}
+.memo-content-wrapper .prism-previewer-easing.prism-previewer-easing circle,
+.memo-content-wrapper .prism-previewer-easing.prism-previewer-easing path,
+.memo-content-wrapper .prism-previewer-easing.prism-previewer-easing line {
+  stroke: #383a42;
+  /* Fill colour of the handle */
+}
+.memo-content-wrapper .prism-previewer-easing.prism-previewer-easing circle {
+  fill: transparent;
+}

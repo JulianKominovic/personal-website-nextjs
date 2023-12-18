@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import MarkdownPreview from "./MarkdownPreview";
 import Image from "next/image";
 import { formatTimeAgo } from "@/utils/date";
@@ -6,13 +6,16 @@ import { MemoModelDB } from "@/db/init";
 import OnlyClientSide from "../shared/OnlyClientSide";
 import { ResourceCardItemOptions } from "./ResourceCardItemOptions";
 
-function ResourceCardItem({
-  resource,
-  isAuth,
-}: {
-  resource: MemoModelDB;
-  isAuth: boolean;
-}) {
+const ResourceCardItem = forwardRef(function ResourceCardItemInner(
+  {
+    resource,
+    isAuth,
+  }: {
+    resource: MemoModelDB;
+    isAuth: boolean;
+  },
+  ref
+) {
   const id = parseInt(
     (resource.id as unknown as string).replace(new RegExp("[^0-9]", "g"), "")
   );
@@ -117,12 +120,12 @@ function ResourceCardItem({
           {isAuth && <ResourceCardItemOptions resource={resource} />}
         </div>
 
-        <div className="memo-content-wrapper ">
+        <div className="memo-content-wrapper " ref={ref as any}>
           <MarkdownPreview source={resource.content} />
         </div>
       </div>
     </>
   );
-}
+});
 
 export default ResourceCardItem;

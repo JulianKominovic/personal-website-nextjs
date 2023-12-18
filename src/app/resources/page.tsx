@@ -1,5 +1,6 @@
+import "../../styles/prism-one-light.css";
 import { memosDb } from "@/db/init";
-import React, { Suspense } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 import { cookies } from "next/headers";
 import { buildHistoricalActivityRecord } from "@/utils/memos";
