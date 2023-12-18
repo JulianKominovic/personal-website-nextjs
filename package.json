@@ -19,6 +19,7 @@
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.33.1",
+    "showdown": "^2.1.0",
     "snarkdown": "^2.0.0",
     "surrealdb.js": "^0.11.0"
   },
@@ -26,6 +27,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/showdown": "^2.0.6",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",

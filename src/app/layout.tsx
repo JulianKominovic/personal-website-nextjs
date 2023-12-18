@@ -3,6 +3,8 @@ import { Montserrat, Lora, Mulish } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import Header from "@/layout/header";
+import Script from "next/script";
+import Head from "next/head";
 
 const montserrat = Montserrat({
   style: "normal",
@@ -73,6 +75,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
   },
+  other: {
+    "twitter:widgets:autoload": "off",
+  },
 };
 
 export default function RootLayout({
@@ -92,6 +97,27 @@ export default function RootLayout({
       >
         <Header />
         <main id="main">{children}</main>
+
+        <Script id="twitt-script">
+          {`
+          window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+              t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          
+            t._e = [];
+            t.ready = function(f) {
+              t._e.push(f);
+            };
+          
+            return t;
+          }(document, "script", "twitter-wjs"));
+          `}
+        </Script>
       </body>
     </html>
   );

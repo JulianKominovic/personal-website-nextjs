@@ -26,6 +26,7 @@ function handleCreate(content = "") {
 
 export default function MarkdownEditorForm() {
   const [value, setValue] = useState("");
+  const [previewHTML, setPreviewHTML] = useState("");
   return (
     <>
       <p>Add new resource/memo</p>
@@ -45,9 +46,17 @@ export default function MarkdownEditorForm() {
             fontSize: 18,
             borderRadius: 8,
           }}
-          className="mb-2 w-full rounded-md [&_.w-md-editor-toolbar__svg]:h-4 [&_.w-md-editor-toolbar__svg]:w-4 [&_.w-md-editor-toolbar__svg]:font-thin"
+          ref={(ref) => {
+            const previewElement = ref?.container?.querySelector(
+              ".w-md-editor-preview>div"
+            );
+            if (!previewElement) return;
+            setPreviewHTML(previewElement?.innerHTML ?? "");
+            (window as any)?.twttr?.widgets?.load(previewElement);
+          }}
+          className="mb-2 w-full rounded-md [&_.w-md-editor-toolbar__svg]:h-4 [&_.w-md-editor-toolbar__svg]:w-4 [&_.w-md-editor-toolbar__svg]:font-thin [&_.w-md-editor-preview]:prose"
         />
-        <textarea hidden name="content" readOnly defaultValue={value} />
+        <textarea hidden name="content" readOnly defaultValue={previewHTML} />
         <button className="rounded-md bg-neutral-100 px-2 py-1 hover:bg-neutral-200 dark:bg-neutral-700 dark:hover:bg-neutral-600">
           Create resource
         </button>
