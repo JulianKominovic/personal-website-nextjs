@@ -5,7 +5,6 @@ const nextConfig = {
   serverRuntimeConfig: {
     port: 8000,
   },
-  distDir: "build",
   images: {
     remotePatterns: [
       {
