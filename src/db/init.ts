@@ -3,7 +3,7 @@ import type { RawQueryResult } from "node_modules/surrealdb.js/esm/types";
 import { Surreal } from "surrealdb.js";
 
 const dbMemos = new Surreal();
-console.log({
+console.log(process.env.DB_IP_PORT, {
   database: process.env.RESOURCES_DB_ID as string,
   namespace: process.env.RESOURCES_DB_ID as string,
   auth: {
