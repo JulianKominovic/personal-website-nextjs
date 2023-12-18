@@ -5,6 +5,6 @@
   "/page": "app/page.js",
   "/resources/page": "app/resources/page.js",
   "/api/memos/[id]/route": "app/api/memos/[id]/route.js",
-  "/api/auth/route": "app/api/auth/route.js",
-  "/api/memos/route": "app/api/memos/route.js"
+  "/api/memos/route": "app/api/memos/route.js",
+  "/api/auth/route": "app/api/auth/route.js"
 }

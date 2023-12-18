@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
+import ResourceCardItem from "./ResourceCardItem";
 
 function handleCreate(content = "") {
   const memo = {
@@ -46,6 +47,7 @@ export default function MarkdownEditorForm() {
             fontSize: 18,
             borderRadius: 8,
           }}
+          preview="live"
           ref={(ref) => {
             const previewElement = ref?.container?.querySelector(
               ".w-md-editor-preview>div"
@@ -61,39 +63,19 @@ export default function MarkdownEditorForm() {
           Create resource
         </button>
       </form>
+
+      <p>Preview</p>
+
+      <ResourceCardItem
+        isAuth={false}
+        resource={{
+          id: "0" as any,
+          content: previewHTML,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          pinned: false,
+        }}
+      />
     </>
   );
 }
-
-// export function MarkdownPreview({ source }: { source: string }) {
-//   return (
-//     <MDEditor.Markdown
-//       source={source}
-//       className="!bg-transparent !text-neutral-700 dark:!text-neutral-300"
-//       style={{ whiteSpace: "pre-wrap" }}
-//       components={{
-//         a: ({ node, ...props }) => {
-//           return (
-//             <a
-//               {...props}
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               className="text-blue-500 underline after:!hidden"
-//             />
-//           );
-//         },
-//         img: ({ node, ...props }) => {
-//           return (
-//             <img
-//               {...props}
-//               style={{
-//                 borderRadius: 8,
-//               }}
-//               loading="lazy"
-//             />
-//           );
-//         },
-//       }}
-//     />
-//   );
-// }
