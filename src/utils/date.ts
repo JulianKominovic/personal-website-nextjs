@@ -8,7 +8,7 @@ const units = [
   ["year", 12 * 30 * 24 * 60 * 60],
 ];
 
-export function diffUnitFor(from) {
+function diffUnitFor(from) {
   const delta = Math.round((from - Date.now()) / 1000); // Rounded delta in seconds
 
   for (let i = 0; i < units.length; i += 1) {

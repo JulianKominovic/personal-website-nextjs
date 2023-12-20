@@ -6,6 +6,7 @@ import { cookies } from "next/headers";
 import { buildHistoricalActivityRecord } from "@/utils/memos";
 import ResourceCardItem from "@/components/resources/ResourceCardItem";
 import { ActivityHistory } from "@/components/resources/ActivityHistory";
+import OnlyClientSide from "@/components/shared/OnlyClientSide";
 const MarkdownEditorForm = dynamic(
   () => import("@/components/resources/MarkdownEditor"),
   { ssr: false }
@@ -52,7 +53,9 @@ async function ResourcesPage({
             Search
           </button>
         </form>
-        <ActivityHistory history={resourcesHistory} />
+        <OnlyClientSide>
+          <ActivityHistory history={resourcesHistory} />
+        </OnlyClientSide>
       </section>
       {resources?.map((resource) => (
         <ResourceCardItem
