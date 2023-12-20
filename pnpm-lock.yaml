@@ -44,6 +44,9 @@ dependencies:
   surrealdb.js:
     specifier: ^0.11.0
     version: 0.11.0(bufferutil@4.0.8)
+  virtua:
+    specifier: ^0.17.6
+    version: 0.17.6(react-dom@18.2.0)(react@18.2.0)
 
 devDependencies:
   '@types/node':
@@ -4621,6 +4624,16 @@ packages:
       '@types/unist': 3.0.2
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
+    dev: false
+
+  /virtua@0.17.6(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-tJqLi1kpGdWu8sBVRjqfMnums3NQYtfMOYr2n1vnOwXuUWKozHS20RzWfiQGfB5ylM4typkvUs2w7uzkPC1y3A==}
+    peerDependencies:
+      react: '>=16.14.0'
+      react-dom: '>=16.14.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /watchpack@2.4.0:
