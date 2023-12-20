@@ -22,4 +22,5 @@ body {
 
 iframe[title="X Post"] {
   width: 100% !important;
+  border-radius: 12px;
 }
