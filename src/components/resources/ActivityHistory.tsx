@@ -51,7 +51,6 @@ export function ActivityHistory({ history }: ActivityHistoryProps) {
   const totalActivitiesDone = history.reduce((prev, curr) => {
     return prev + curr.activitiesDone;
   }, 0);
-  console.log(history);
   return (
     <div className="mb-4 grid w-full grid-cols-[repeat(5,1fr)] grid-rows-[repeat(1,40px)] gap-1">
       {pastDays.reverse().map((record) => {
@@ -61,12 +60,7 @@ export function ActivityHistory({ history }: ActivityHistoryProps) {
         const match = history.find(
           (entry) => entry.timestamp === formattedDate
         );
-        console.log({
-          record,
-          match,
-          formattedDate,
-          history,
-        });
+
         const activitiesDoneInThisDay = match?.activitiesDone ?? 0;
         const dayActivitiesPercentage =
           activitiesDoneInThisDay / totalActivitiesDone;

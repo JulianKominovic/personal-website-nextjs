@@ -19,3 +19,7 @@ body {
 .copied {
   display: none;
 }
+
+iframe[title="X Post"] {
+  width: 100% !important;
+}

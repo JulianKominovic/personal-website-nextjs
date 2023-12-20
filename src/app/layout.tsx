@@ -5,6 +5,7 @@ import clsx from "clsx";
 import Header from "@/layout/header";
 import Script from "next/script";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const montserrat = Montserrat({
   style: "normal",

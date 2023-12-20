@@ -21,7 +21,7 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
   );
   return (
     <>
-      <div className="memo-wrapper memos-3 mb-4 rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-md hover:transition-shadow dark:border-neutral-700 bg-neutral-50 [&__img]:rounded-lg ">
+      <div className="memo-wrapper memos-3 mb-4 rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-md hover:transition-shadow dark:border-neutral-700 bg-white [&__img]:rounded-lg ">
         <div className="memo-top-wrapper relative mb-4 flex w-full justify-between">
           <div className="mr-1 flex w-full max-w-[calc(100%-20px)] flex-col justify-start sm:flex-row sm:items-center">
             <span
