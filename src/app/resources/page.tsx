@@ -21,16 +21,12 @@ async function ResourcesPage({
   const resources = searchQuery
     ? await memosDb.searchContent(searchQuery)
     : await memosDb.selectAll();
-  const resourcesHistory =
-    resources && resources?.length > 0
-      ? buildHistoricalActivityRecord(resources)
-      : [];
+
   const isAuth =
     cookies().get("auth-cookie")?.value === process.env.AUTH_SECRET;
   console.log({
     searchParams,
     isAuth,
-    resourcesHistory,
   });
 
   return (
@@ -54,7 +50,7 @@ async function ResourcesPage({
           </button>
         </form>
         <OnlyClientSide>
-          <ActivityHistory history={resourcesHistory} />
+          <ActivityHistory resources={resources} />
         </OnlyClientSide>
       </section>
       {resources?.map((resource) => (

@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import { MemoModelDB } from "@/db/init";
+import { buildHistoricalActivityRecord } from "@/utils/memos";
 
 const TooltipActivityHistory = ({
   children,
@@ -34,15 +36,22 @@ const TooltipActivityHistory = ({
   );
 };
 
-export type ActivityHistoryProps = {
+export type ActivityHistory = {
   history: {
     // YYYY/MM/DD
     timestamp: `${string}/${string}/${string}`;
     activitiesDone: number;
   }[];
 };
+export type ActivityHistoryProps = {
+  resources?: MemoModelDB[];
+};
 
-export function ActivityHistory({ history }: ActivityHistoryProps) {
+export function ActivityHistory({ resources }: ActivityHistoryProps) {
+  const history =
+    resources && resources?.length > 0
+      ? buildHistoricalActivityRecord(resources)
+      : [];
   const pastDays = Array.from({ length: 5 }).map((_, i) => {
     const now = new Date();
     now.setDate(now.getDate() - i);

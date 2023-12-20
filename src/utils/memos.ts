@@ -1,17 +1,15 @@
-import { ActivityHistoryProps } from "@/components/resources/ActivityHistory";
+import { ActivityHistory } from "@/components/resources/ActivityHistory";
 import { MemoModelDB } from "@/db/init";
 
 export function buildHistoricalActivityRecord(
   resources: MemoModelDB[]
-): ActivityHistoryProps["history"] {
-  const records: Record<
-    ActivityHistoryProps["history"][0]["timestamp"],
-    number
-  > = {};
+): ActivityHistory["history"] {
+  const records: Record<ActivityHistory["history"][0]["timestamp"], number> =
+    {};
   resources.forEach((res) => {
     const date = new Date(res.updatedAt);
 
-    const dateRecordEntry: ActivityHistoryProps["history"][0]["timestamp"] = `${date.getFullYear()}/${
+    const dateRecordEntry: ActivityHistory["history"][0]["timestamp"] = `${date.getFullYear()}/${
       date.getMonth() + 1
     }/${date.getDate()}`;
 
@@ -24,5 +22,5 @@ export function buildHistoricalActivityRecord(
   return Object.entries(records).flatMap(([key, value]) => ({
     timestamp: key,
     activitiesDone: value,
-  })) as ActivityHistoryProps["history"];
+  })) as ActivityHistory["history"];
 }
