@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 
 const workingExperience = [
@@ -103,9 +104,135 @@ const projects: {
   },
 ];
 
+enum StatusEnum {
+  InProgress = "In progress",
+  Done = "Done",
+  Abandoned = "Abandoned",
+}
+type TimelineRecord = {
+  title: string;
+  description: string;
+  date: string;
+  media?: string;
+  status: StatusEnum;
+  link?: string;
+};
+
+const timelineRecords: TimelineRecord[] = [
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/11/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/11/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/11/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/11/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/11/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/11/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/10/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/10/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/10/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.InProgress,
+    date: "04/10/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.Abandoned,
+    date: "04/10/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+  {
+    title: "TSXperiment",
+    description: "Similar to RunJS. A Javascript offline-first playground.",
+    status: StatusEnum.Done,
+    date: "04/10/2023",
+    // Todas las imagenes van a ser 1200w x 675h
+    media: "/images/TSXperiment.png",
+    link: "https://github.com/JulianKominovic/tsxperiment",
+  },
+];
+
 export default function Home() {
   return (
-    <>
+    <main>
       <section className="mb-16">
         <h1 className="text-4xl">{"Hi! I'm Julian,"}</h1>
         <h2 className="text-xl">Frontend developer. Average rust enjoyer.</h2>
@@ -175,7 +302,7 @@ export default function Home() {
                       height="32"
                     />
                   </div>
-                  <div className="flex flex-col sm:ml-4">
+                  <div className="flex flex-col">
                     <a
                       href="https://koinlatam.com"
                       target="_blank"
@@ -197,41 +324,44 @@ export default function Home() {
         <h2 id="tech-stack" className="title mb-4 text-xl">
           Tech stack
         </h2>
-        <p className="mb-4">
-          In my daily basis I use some kind of
-          <a href="https://wikitia.com/wiki/MERN_(solution_stack)">MERN</a> but
-          without the <b>M</b>, {"so it's more like"} <b>ERN</b>. I {"don't"}{" "}
-          believe in
-          <a
-            href="https://en.wikipedia.org/wiki/Solution_stack#Full-stack_developer"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            fullstack
-          </a>
-          term but {"it's"} the best way to describe my current position.
-        </p>
-        <p className="mb-4">
-          {"I'm"} a big fan of
-          <a
-            href="https://www.rust-lang.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Rust
-          </a>
-          and {"I'm"} trying to use it as much as I can. {"I've"} found an
-          interesting merge of both worlds: Rust and Web called
-          <a
-            href="https://tauri.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tauri
-          </a>
-          . Take a look at <a href="#projects">projects section</a> to see what
-          {"I've"} done with it.
-        </p>
+        {/* <p className="mb-4">
+            In my daily basis I use some kind of
+            <a href="https://wikitia.com/wiki/MERN_(solution_stack)">
+              MERN
+            </a>{" "}
+            but without the <b>M</b>, {"so it's more like"} <b>ERN</b>. I{" "}
+            {"don't"} believe in
+            <a
+              href="https://en.wikipedia.org/wiki/Solution_stack#Full-stack_developer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              fullstack
+            </a>
+            term but {"it's"} the best way to describe my current position.
+          </p>
+          <p className="mb-4">
+            {"I'm"} a big fan of
+            <a
+              href="https://www.rust-lang.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Rust
+            </a>
+            and {"I'm"} trying to use it as much as I can. {"I've"} found an
+            interesting merge of both worlds: Rust and Web called
+            <a
+              href="https://tauri.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tauri
+            </a>
+            . Take a look at <a href="#projects">projects section</a> to see
+            what
+            {"I've"} done with it.
+          </p> */}
 
         <ul className="my-4">
           <li>
@@ -265,7 +395,7 @@ export default function Home() {
           </li>
         </ul>
       </section>
-      <section className="mb-16">
+      {/* <section className="mb-16">
         <h2 className="title mb-4 text-xl" id="projects">
           Projects
         </h2>
@@ -289,7 +419,64 @@ export default function Home() {
             </a>
           </li>
         </ol>
+      </section> */}
+      <section className="flex flex-col bg-white">
+        <h2 className="title text-xl mb-4" id="projects">
+          Projects
+        </h2>
+        {timelineRecords.map(
+          ({ title, description, media, status, date, link }) => {
+            const id = title.replace(/\s/g, "-").toLowerCase();
+            return (
+              <article className="mb-24" key={id}>
+                <div className="flex gap-4 mb-2 text-sm items-center">
+                  <time className="text-neutral-400">
+                    {Intl.DateTimeFormat(undefined, {
+                      dateStyle: "long",
+                    }).format(new Date(date))}
+                  </time>
+                  <span
+                    className={clsx(
+                      "px-2 py-1 rounded-full text-xs",
+                      status === StatusEnum.Done &&
+                        "text-green-600 bg-green-100",
+                      status === StatusEnum.InProgress &&
+                        "text-yellow-600 bg-yellow-100",
+                      status === StatusEnum.Abandoned &&
+                        "text-red-600 bg-red-100"
+                    )}
+                  >
+                    {status}
+                  </span>
+                  <hr className="block flex-grow" />
+                </div>
+                {media && (
+                  <Image
+                    className="rounded-lg border overflow-hidden"
+                    loading="lazy"
+                    src={media}
+                    alt={title}
+                    width="1200"
+                    height="675"
+                  ></Image>
+                )}
+                <h3 className="font-montserrat text-2xl mt-4" id={id}>
+                  {title}
+                </h3>
+                <p className="mb-4">{description}</p>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="white-btn px-4 py-2 rounded-lg"
+                >
+                  {"Let's see!"}
+                </a>
+              </article>
+            );
+          }
+        )}
       </section>
-    </>
+    </main>
   );
 }

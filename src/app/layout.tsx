@@ -95,11 +95,11 @@ export default function RootLayout({
     >
       <body
         className={clsx(
-          "mx-auto flex min-h-screen max-w-3xl flex-col bg-neutral-100 px-8 pt-16  font-normal leading-relaxed text-neutral-800 antialiased"
+          "mx-auto  min-h-screen   bg-neutral-100 px-8 pt-16  font-normal leading-relaxed text-neutral-800 antialiased max-w-3xl"
         )}
       >
         <Header />
-        <main id="main">{children}</main>
+        {children}
 
         <Script id="twitt-script">
           {`

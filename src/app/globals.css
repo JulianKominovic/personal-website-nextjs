@@ -24,3 +24,9 @@ iframe[title="X Post"] {
   width: 100% !important;
   border-radius: 12px;
 }
+.white-btn {
+  border: 1px solid #d0d0d0;
+  background: #f0f0f0;
+  box-shadow: 1px 1px 3px 0px #fff inset,
+    -1px -1px 5px 0px rgba(0, 0, 0, 0.1) inset;
+}

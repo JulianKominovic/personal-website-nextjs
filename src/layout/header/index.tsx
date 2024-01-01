@@ -22,7 +22,7 @@ const menuLinks = [
 
 function Header() {
   return (
-    <header id="main-header" className="group relative mb-16">
+    <header id="main-header" className="group relative mb-16 mx-auto max-w-3xl">
       <a
         href="/"
         className="inline-flex items-center no-underline grayscale hover:filter-none sm:relative sm:inline-block"

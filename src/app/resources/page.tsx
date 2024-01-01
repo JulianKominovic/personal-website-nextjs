@@ -29,7 +29,7 @@ async function ResourcesPage({
   });
 
   return (
-    <>
+    <main className="flex  flex-col">
       <section className="mb-14">
         <h1 className="text-3xl font-bold">Resources</h1>
         <p>Adding useful resources everyday!</p>
@@ -60,7 +60,7 @@ async function ResourcesPage({
           key={resource.id}
         />
       ))}
-    </>
+    </main>
   );
 }
 
