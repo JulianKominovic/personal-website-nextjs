@@ -65,7 +65,7 @@ export default function BigCard({
           alt={title}
           width={48}
           height={48}
-          className="w-12 h-12 rounded-lg aspect-square"
+          className="hidden w-12 h-12 rounded-lg aspect-square sm:block"
         />
         <div>
           <h4 className="text-lg font-medium">{title}</h4>
