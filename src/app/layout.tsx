@@ -7,31 +7,11 @@ import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
 
-const montserrat = Montserrat({
-  style: "normal",
-  weight: ["700"],
-  subsets: ["latin"],
-  display: "swap",
-  fallback: ["sans-serif"],
-  preload: true,
-  variable: "--font-montserrat",
-});
-const lora = Lora({
-  style: "italic",
-  weight: ["500"],
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-  variable: "--font-lora",
-});
+import { Inter as FontSans } from "next/font/google";
 
-const text = Mulish({
-  style: "normal",
-  weight: ["400", "500"],
+export const fontSans = FontSans({
   subsets: ["latin"],
-  display: "swap",
-  preload: true,
-  variable: "--font-text",
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -89,17 +69,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={clsx(montserrat.variable, lora.variable, text.variable)}
-    >
+    <html lang="en" className={fontSans.variable}>
       <body
         className={clsx(
-          "mx-auto flex min-h-screen max-w-3xl flex-col bg-neutral-100 px-8 pt-16  font-normal leading-relaxed text-neutral-800 antialiased"
+          "min-h-screen bg-background font-normal leading-relaxed text-foreground antialiased dark overflow-x-hidden"
         )}
       >
+        <div className="fixed top-0 left-0 w-full h-full -z-10">
+          <div className="relative w-full h-full bg-slate-950">
+            <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+          </div>
+        </div>
         <Header />
-        <main id="main">{children}</main>
+        <main id="main" className="overflow-x-hidden">
+          {children}
+        </main>
 
         <Script id="twitt-script">
           {`

@@ -1,29 +1,15 @@
 import Link from "next/link";
 import React from "react";
-
-const menuLinks = [
-  {
-    title: "Home",
-    path: "/",
-  },
-  // {
-  //   title: "Blog",
-  //   path: "/posts/",
-  // },
-  // {
-  //   title: "Crafting",
-  //   path: "/crafting/",
-  // },
-  {
-    title: "Resources",
-    path: "/resources/",
-  },
-];
+import Navbar from "./Navbar";
 
 function Header() {
   return (
-    <header id="main-header" className="group relative mb-16">
-      <a
+    <aside
+      id="main-header"
+      className="group sticky top-2 left-0 mb-16 bg-black bg-opacity-20 backdrop-blur-md"
+    >
+      <Navbar />
+      {/* <a
         href="/"
         className="inline-flex items-center no-underline grayscale hover:filter-none sm:relative sm:inline-block"
       >
@@ -42,8 +28,8 @@ function Header() {
             {link.title}
           </Link>
         ))}
-      </nav>
-    </header>
+      </nav> */}
+    </aside>
   );
 }
 
