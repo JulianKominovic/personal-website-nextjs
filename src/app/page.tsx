@@ -1,3 +1,4 @@
+import Footer from "@/sections/Footer";
 import Hobby from "@/sections/Hobby";
 import Presentation from "@/sections/Presentation";
 import Projects from "@/sections/Projects";
@@ -12,6 +13,7 @@ export default function Home() {
       <TechStack />
       <WorkExperience />
       <Hobby />
+      <Footer />
     </>
   );
 }

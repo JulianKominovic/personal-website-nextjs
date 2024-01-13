@@ -11,7 +11,7 @@ export default function WorkExperience() {
         Most recent work experience
       </p>
       <div className="absolute w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-600/30 via-transparent opacity-60 to-transparent h-[700px]"></div>
-      <ul className="flex justify-between mt-28">
+      <ul className="flex flex-wrap justify-around mt-28">
         {WORKING_EXPERIENCE.slice(0, 3).map(
           ({ role, company, period, logo, info }, i) => (
             <li

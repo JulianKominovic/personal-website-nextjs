@@ -49,7 +49,7 @@ export default function BigCard({
   href,
 }: BigCardProps) {
   return (
-    <BigCardContainer>
+    <BigCardContainer href={href} className={className}>
       <header className="w-full h-full overflow-hidden rounded-2xl">
         <Image
           className="object-cover w-full h-auto rounded-lg"
