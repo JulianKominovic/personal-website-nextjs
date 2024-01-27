@@ -1,12 +1,12 @@
 {
   "/_not-found": "app/_not-found.js",
-  "/auth/page": "app/auth/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js",
-  "/hobby/page": "app/hobby/page.js",
   "/ml-ofertas/page": "app/ml-ofertas/page.js",
+  "/auth/page": "app/auth/page.js",
   "/resources/page": "app/resources/page.js",
+  "/hobby/page": "app/hobby/page.js",
+  "/page": "app/page.js",
   "/api/auth/route": "app/api/auth/route.js",
-  "/api/memos/[id]/route": "app/api/memos/[id]/route.js",
-  "/api/memos/route": "app/api/memos/route.js"
+  "/api/memos/route": "app/api/memos/route.js",
+  "/api/memos/[id]/route": "app/api/memos/[id]/route.js"
 }
