@@ -1,2 +1,8 @@
 #V2
 select * from memos
+select * from ml-ofertas;
+select * from "ml-ofertas";
+select * from "ml_ofertas";
+INFO FOR DB;
+exit
+exit;

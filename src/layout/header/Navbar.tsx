@@ -9,8 +9,8 @@ import clsx from "clsx";
 export default function Navbar() {
   const pathname = usePathname();
   return (
-    <nav className="fixed z-50 max-w-full p-px mx-auto overflow-hidden overflow-x-scroll -translate-x-1/2 rounded-full w-fit sm:mx-0 bottom-1 bg-gradient-to-t from-transparent to-foreground/40 left-1/2 sm:left-4 sm:top-4 sm:w-14">
-      <ul className="flex items-center justify-center h-full px-2 pt-1 pb-3 overflow-hidden rounded-full w-fit sm:px-0 sm:flex-col bg-background bg-gradient-to-t from-background to-foreground/10">
+    <nav className="fixed z-50 max-w-full p-px mx-auto overflow-hidden overflow-x-scroll -translate-x-1/2 rounded-full sm:h-fit sm:translate-x-0 w-fit sm:mx-0 bottom-1 bg-gradient-to-t from-transparent to-foreground/40 left-1/2 sm:left-4 sm:top-4 sm:w-14">
+      <ul className="flex items-center justify-center h-full px-2 pt-1 pb-3 overflow-hidden rounded-full w-fit sm:px-0 sm:flex-col bg-background bg-gradient-to-t from-background to-foreground/10 sm:w-full">
         {Object.values(PAGE_INDEX).map(({ icon, path, title }) => (
           <li
             key={path}
@@ -30,8 +30,8 @@ export default function Navbar() {
             </Link>
           </li>
         ))}
-        <li className="flex justify-center w-px h-full p-1 px-2 mt-1 sm:w-full sm:h-px aspect-square">
-          <hr className="border" />
+        <li className="flex justify-center w-px h-full px-2 mt-1 sm:p-1 sm:w-full sm:h-px ">
+          <hr className="w-full h-full border border-muted-foreground/10" />
         </li>
         {SOCIAL_LINKS.map(({ link, friendlyName, icon, label }) => (
           <li
