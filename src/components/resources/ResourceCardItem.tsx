@@ -21,8 +21,8 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
   );
   return (
     <>
-      <div className="memo-wrapper memos-3 mb-4 rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-md hover:transition-shadow dark:border-neutral-700 bg-white [&__img]:rounded-lg ">
-        <div className="memo-top-wrapper relative mb-4 flex w-full justify-between">
+      <div className="memo-wrapper memos-3 mb-4 rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-md hover:transition-shadow dark:border-neutral-700 bg-card [&__img]:rounded-lg ">
+        <div className="relative flex justify-between w-full mb-4 memo-top-wrapper">
           <div className="mr-1 flex w-full max-w-[calc(100%-20px)] flex-col justify-start sm:flex-row sm:items-center">
             <span
               className="flex flex-row items-center justify-start"
@@ -30,7 +30,7 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
             >
               <div className="mr-1 !h-5 !w-5  overflow-clip rounded-full">
                 <Image
-                  className="h-auto min-h-full w-full min-w-full rounded-full object-cover shadow dark:opacity-80"
+                  className="object-cover w-full h-auto min-w-full min-h-full rounded-full shadow dark:opacity-80"
                   src="/logo-jk.png"
                   width={20}
                   height={20}
@@ -52,12 +52,12 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="hidden h-auto w-4 text-neutral-400 dark:text-zinc-400 sm:inline-block"
+              className="hidden w-4 h-auto text-neutral-400 dark:text-zinc-400 sm:inline-block"
             >
               <circle cx="12.1" cy="12.1" r="1" />
             </svg>
             <OnlyClientSide>
-              <span className="select-none text-sm text-neutral-400">
+              <span className="text-sm select-none text-neutral-400">
                 {formatTimeAgo(resource.updatedAt)}
               </span>
             </OnlyClientSide>
@@ -71,7 +71,7 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="hidden h-auto w-4 text-neutral-400 dark:text-zinc-400 sm:inline-block"
+              className="hidden w-4 h-auto text-neutral-400 dark:text-zinc-400 sm:inline-block"
             >
               <circle cx="12.1" cy="12.1" r="1" />
             </svg>
@@ -93,7 +93,7 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="hidden h-auto w-4 text-neutral-400 dark:text-zinc-400 sm:inline-block"
+                  className="hidden w-4 h-auto text-neutral-400 dark:text-zinc-400 sm:inline-block"
                 >
                   <circle cx="12.1" cy="12.1" r="1" />
                 </svg>
@@ -109,7 +109,7 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="mr-2 h-auto w-4"
+                    className="w-4 h-auto mr-2"
                   >
                     <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
                   </svg>
