@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "IMPORTANT: run this script as root user: sudo -s"
 
 # Check for env variables
 if [ -z "$DB_PASSWORD" ]; then
@@ -40,7 +41,7 @@ fi
 # Kill database process
 killall surreal
 # Start database process
-surreal start -A --auth --user $DB_USER --pass $DB_PASSWORD --bind $DB_IP_PORT file://./database &
+nohup surreal start -A --auth --user $DB_USER --pass $DB_PASSWORD --bind $DB_IP_PORT file://./database > surreal.out &
 
 
 
@@ -64,3 +65,5 @@ killall next-server 2>/dev/null
 # ln -s "$NVM_DIR/versions/node/$(nvm version)/bin/npx" "/usr/local/bin/npx"||true
 # Run server
 nohup node ./jkominovic.dev/build/standalone/server.js &
+echo "Check if server is running"
+echo "If not, run: nohup node ./jkominovic.dev/build/standalone/server.js &"
