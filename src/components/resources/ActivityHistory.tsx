@@ -19,7 +19,7 @@ const TooltipActivityHistory = ({
         <Tooltip.Trigger asChild>{children}</Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content className="TooltipContent" sideOffset={4}>
-            <div className="mb-2 w-max rounded-md border border-neutral-300 bg-white px-2 py-1 shadow-md">
+            <div className="px-2 py-1 mb-2 border rounded-md shadow-md bg-background w-max border-neutral-800">
               <span>
                 {Intl.DateTimeFormat(undefined, {
                   dateStyle: "medium",
@@ -81,11 +81,11 @@ export function ActivityHistory({ resources }: ActivityHistoryProps) {
             key={"g" + record.toISOString()}
           >
             <button
-              className="group relative rounded-md border border-neutral-200 dark:border-neutral-700"
+              className="relative bg-green-900 border rounded-md group border-neutral-200 bg-card dark:border-neutral-700"
               style={{
-                background: `hsl(142deg 50% ${
-                  100 - 60 * dayActivitiesPercentage
-                }%)`,
+                background: `linear-gradient(90deg, #10B981 ${
+                  dayActivitiesPercentage * 100
+                }%, #1F2937 ${dayActivitiesPercentage * 100}%)`,
               }}
             ></button>
           </TooltipActivityHistory>
