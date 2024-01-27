@@ -6,6 +6,7 @@ import { cookies } from "next/headers";
 import ResourceCardItem from "@/components/resources/ResourceCardItem";
 import { ActivityHistory } from "@/components/resources/ActivityHistory";
 import OnlyClientSide from "@/components/shared/OnlyClientSide";
+import Section from "@/components/shared/Section";
 const MarkdownEditorForm = dynamic(
   () => import("@/components/resources/MarkdownEditor"),
   { ssr: false }
@@ -29,28 +30,30 @@ async function ResourcesPage({
   });
 
   return (
-    <>
-      <section className="mb-14">
-        <h1 className="text-3xl font-bold">Resources</h1>
-        <p>Adding useful resources everyday!</p>
-      </section>
+    <main className="max-w-3xl mx-auto">
+      <Section className="max-w-[80ch] mx-auto mb-52 mt-36">
+        <h1 className="text-5xl font-semibold text-center">Resources</h1>
+        <h2 className="mb-10 text-2xl text-center text-foreground/80">
+          Adding useful resources very frecuently!
+        </h2>
+      </Section>
       {isAuth && <MarkdownEditorForm />}
 
       <section className="w-full">
-        <form id="search" className="mb-6 flex h-9 items-center gap-4">
+        <form id="search" className="flex items-center gap-4 mb-6 h-9">
           <input
             type="text"
             name="q"
             placeholder="Search..."
-            className="h-full w-full rounded-lg border border-neutral-200 px-4 outline-neutral-300 transition-shadow hover:shadow-sm hover:transition-shadow dark:border-neutral-800"
+            className="w-full h-full px-4 transition-shadow border rounded-sm border-border focus:ring-ring ring-ring outline-ring hover:shadow-sm hover:transition-shadow dark:border-neutral-800 bg-background"
           />
-          <button className="h-full rounded-md bg-neutral-200 px-2 py-1 hover:bg-neutral-300 dark:bg-neutral-700 dark:hover:bg-neutral-600">
+          <button className="h-full px-2 py-1 rounded-md bg-neutral-200 hover:bg-neutral-300 dark:border-neutral-800 dark:bg-background dark:hover:bg-neutral-600">
             Search
           </button>
         </form>
-        <OnlyClientSide>
+        {/* <OnlyClientSide>
           <ActivityHistory resources={resources} />
-        </OnlyClientSide>
+        </OnlyClientSide> */}
       </section>
 
       {resources?.map((resource) => (
@@ -60,7 +63,7 @@ async function ResourcesPage({
           key={resource.id}
         />
       ))}
-    </>
+    </main>
   );
 }
 
