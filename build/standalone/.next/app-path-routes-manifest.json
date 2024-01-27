@@ -1,1 +1,1 @@
-{"/_not-found":"/_not-found","/auth/page":"/auth","/favicon.ico/route":"/favicon.ico","/page":"/","/hobby/page":"/hobby","/ml-ofertas/page":"/ml-ofertas","/resources/page":"/resources","/api/auth/route":"/api/auth","/api/memos/[id]/route":"/api/memos/[id]","/api/memos/route":"/api/memos"}
+{"/_not-found":"/_not-found","/favicon.ico/route":"/favicon.ico","/ml-ofertas/page":"/ml-ofertas","/auth/page":"/auth","/resources/page":"/resources","/hobby/page":"/hobby","/page":"/","/api/auth/route":"/api/auth","/api/memos/route":"/api/memos","/api/memos/[id]/route":"/api/memos/[id]"}
