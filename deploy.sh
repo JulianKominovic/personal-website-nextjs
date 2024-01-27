@@ -31,6 +31,11 @@ if [ -z "$RESOURCES_DB_ID" ]; then
     exit 1
 fi
 
+if [ -z "$ML_OFERTAS_DATABASE" ]; then
+    echo "ML_OFERTAS_DATABASE must be set for example"
+    exit 1
+fi
+
 
 # Kill database process
 killall surreal
