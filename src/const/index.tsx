@@ -223,19 +223,19 @@ export const PAGE_INDEX = {
     title: "Hobby",
     icon: <BsBrushFill />,
   },
-  projects: {
-    path: "/projects",
-    title: "Projects",
-    icon: <BsGridFill />,
-  },
+  // projects: {
+  //   path: "/projects",
+  //   title: "Projects",
+  //   icon: <BsGridFill />,
+  // },
   resources: {
     path: "/resources",
     title: "Resources",
     icon: <BsArchiveFill />,
   },
-  experiments: {
-    path: "/experiments",
-    title: "Experiments",
-    icon: <BsFire />,
-  },
+  // experiments: {
+  //   path: "/experiments",
+  //   title: "Experiments",
+  //   icon: <BsFire />,
+  // },
 };
