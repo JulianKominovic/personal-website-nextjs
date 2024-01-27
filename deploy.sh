@@ -57,7 +57,7 @@ mv personal-website-nextjs/build ./jkominovic.dev
 
 
 # Killall node processes
-killall next-server
+killall next-server 2>/dev/null
 # Create symbolic links
 # ln -s "$NVM_DIR/versions/node/$(nvm version)/bin/node" "/usr/local/bin/node"||true
 # ln -s "$NVM_DIR/versions/node/$(nvm version)/bin/npm" "/usr/local/bin/npm"||true
