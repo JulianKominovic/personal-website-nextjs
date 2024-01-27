@@ -58,6 +58,9 @@ mv personal-website-nextjs/build ./jkominovic.dev
 
 # Killall node processes
 killall next-server
+# Create symbolic links
+# ln -s "$NVM_DIR/versions/node/$(nvm version)/bin/node" "/usr/local/bin/node"||true
+# ln -s "$NVM_DIR/versions/node/$(nvm version)/bin/npm" "/usr/local/bin/npm"||true
+# ln -s "$NVM_DIR/versions/node/$(nvm version)/bin/npx" "/usr/local/bin/npx"||true
 # Run server
-source /home/web/.nvm/nvm.sh
-node ./jkominovic.dev/build/standalone/server.js &
+nohup node ./jkominovic.dev/build/standalone/server.js &

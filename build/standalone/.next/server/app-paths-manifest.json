@@ -3,10 +3,10 @@
   "/auth/page": "app/auth/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/hobby/page": "app/hobby/page.js",
+  "/ml-ofertas/page": "app/ml-ofertas/page.js",
   "/page": "app/page.js",
   "/resources/page": "app/resources/page.js",
-  "/ml-ofertas/page": "app/ml-ofertas/page.js",
   "/api/auth/route": "app/api/auth/route.js",
-  "/api/memos/route": "app/api/memos/route.js",
-  "/api/memos/[id]/route": "app/api/memos/[id]/route.js"
+  "/api/memos/[id]/route": "app/api/memos/[id]/route.js",
+  "/api/memos/route": "app/api/memos/route.js"
 }
