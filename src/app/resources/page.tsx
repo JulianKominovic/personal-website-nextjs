@@ -3,7 +3,6 @@ import { memosDb } from "@/db/init";
 import React from "react";
 import dynamic from "next/dynamic";
 import { cookies } from "next/headers";
-import { buildHistoricalActivityRecord } from "@/utils/memos";
 import ResourceCardItem from "@/components/resources/ResourceCardItem";
 import { ActivityHistory } from "@/components/resources/ActivityHistory";
 import OnlyClientSide from "@/components/shared/OnlyClientSide";
@@ -53,6 +52,7 @@ async function ResourcesPage({
           <ActivityHistory resources={resources} />
         </OnlyClientSide>
       </section>
+
       {resources?.map((resource) => (
         <ResourceCardItem
           isAuth={isAuth}
