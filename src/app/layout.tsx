@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
-import { Montserrat, Lora, Mulish } from "next/font/google";
+
 import "./globals.css";
 import clsx from "clsx";
-import Header from "@/layout/header";
+
 import Script from "next/script";
-import Head from "next/head";
-import { useEffect } from "react";
 
 import { Inter as FontSans } from "next/font/google";
 import Navbar from "@/layout/header/Navbar";
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
