@@ -31,7 +31,7 @@ const Page = (props: Props) => {
           .
         </h2>
       </Section>
-      <Section className="flex flex-wrap max-w-6xl gap-4 mx-auto mb-52 mt-36">
+      <Section className="flex flex-wrap justify-center max-w-6xl gap-4 mx-auto mb-52 mt-36">
         {getAIWallpaperUrls().map((url) => (
           <a href={url} key={url} className="duration-200 hover:scale-95">
             <Image

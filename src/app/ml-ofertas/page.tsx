@@ -1,8 +1,13 @@
 import BigCard, { BigCardContainer } from "@/components/shared/BigCard";
 import Section from "@/components/shared/Section";
-import { getProductsByCategory, type ScrappedItem } from "@/db/ml-ofertas";
+import { ML_CATEGORIES_MAP } from "@/const/ml-categories";
+import {
+  getDiscountsByCategory,
+  getProductsByCategory,
+  type ScrappedItem,
+} from "@/db/ml-ofertas";
 import clsx from "clsx";
-import { ArrowDown, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import Image from "next/image";
 
 type MLProductItemProps = {
@@ -35,7 +40,6 @@ function MLProductItem({
     price,
     priceDeltaVsYesterday
   );
-  console.log(deltaPercentage);
   return (
     <BigCardContainer href={url} className="relative m-0 w-72 h-96">
       <span
@@ -83,7 +87,7 @@ function MLProductItem({
             className={clsx(
               "px-1 py-0.5 rounded-sm",
               priceDeltaVsYesterday > 0
-                ? "text-secondary-foreground bg-secondary-background"
+                ? "text-red-600"
                 : priceDeltaVsYesterday === 0
                 ? "text-muted-foreground bg-card-background"
                 : "text-green-600 bg-destructive-background"
@@ -119,7 +123,8 @@ function MLProductItem({
 
 export default async function Page({ searchParams }: any) {
   const products = await getProductsByCategory();
-  console.log(products);
+  const productsByCategory = await getDiscountsByCategory();
+  console.log(productsByCategory.keys());
   return (
     <Section className="max-w-[80ch] mx-auto mb-52 mt-36">
       <h1 className="mb-4 text-5xl font-semibold text-center">Mercadofertas</h1>
@@ -128,7 +133,32 @@ export default async function Page({ searchParams }: any) {
         Mirá las ofertas de Mercado Libre en un solo lugar. Seguí la evolución
         de precios que estan teniendo los productos más destacados.
       </p>
-      <div className="flex flex-wrap gap-4">
+      {[...productsByCategory.entries()].map(([category, products]) => (
+        <div className="mb-8" key={category}>
+          <h2 className="mb-4 text-3xl font-semibold text-center">
+            {ML_CATEGORIES_MAP[category as keyof typeof ML_CATEGORIES_MAP]}
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {
+              // @ts-ignore
+              products.map((product) => (
+                <MLProductItem
+                  key={product.id}
+                  image={product.image}
+                  price={getLatestPrice(product.price_history) ?? 0}
+                  priceDeltaVsYesterday={product.price_delta_vs_yesterday ?? 0}
+                  priceDeltaVs5Days={product.price_delta_vs_last_five_days ?? 0}
+                  seller={product.seller}
+                  title={product.name}
+                  url={product.link}
+                />
+              ))
+            }
+          </div>
+        </div>
+      ))}
+
+      {/* <div className="flex flex-wrap gap-4">
         {
           // @ts-ignore
           products.map((product) => (
@@ -144,7 +174,7 @@ export default async function Page({ searchParams }: any) {
             />
           ))
         }
-      </div>
+      </div> */}
     </Section>
   );
 }
