@@ -40,3 +40,7 @@ next-env.d.ts
 .env
 
 dump/
+step-0.out
+step-1.out
+step-2.out
+step-3.out
