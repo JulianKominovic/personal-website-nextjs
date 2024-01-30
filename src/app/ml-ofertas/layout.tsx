@@ -146,4 +146,4 @@ export default async function Page({ children }: any) {
     </Section>
   );
 }
-export const ssg = false;
+export const dynamic = "force-dynamic";

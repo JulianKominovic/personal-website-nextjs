@@ -3,7 +3,9 @@ import { calculateDeltaInPercentage, getLatestPrice } from "../utils";
 import VirtualList from "@/components/shared/VirtualList";
 import { firstLetterToUpperCase } from "@/utils/string";
 import MLProductItem from "../components/MLProductCard";
-export const ssg = false;
+
+export const dynamic = "force-dynamic";
+
 const sortByPriceDeltaPercentage = (a: ScrappedItem, b: ScrappedItem) => {
   const aLatestPrice = getLatestPrice(a.price_history);
   const bLatestPrice = getLatestPrice(b.price_history);

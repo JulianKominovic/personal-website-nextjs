@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
+  generateEtags: true,
+
   // Set port to 8000
   serverRuntimeConfig: {
     port: 8000,
