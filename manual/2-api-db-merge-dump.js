@@ -53,6 +53,9 @@ async function init() {
   console.log("GOT EXISTING ITEMS", existingItemsFromDatabase.length);
   console.log("SAVE MAP", existingDbProducts.keys().next().value);
   for (const category of categoriesDir) {
+    if (category === "db-merge.json") continue;
+    if (category === "categories.json") continue;
+
     const productDir = "./dump/api/" + category;
     const productsDirFiles = fs.readdirSync(productDir);
     const products = productsDirFiles.flatMap((file) => {
@@ -86,6 +89,7 @@ async function init() {
         category: category_id,
         subcategory: category_id,
         price_delta: 0,
+        currency_id,
       });
       productsList.push(mergedProduct);
     }

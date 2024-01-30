@@ -71,6 +71,18 @@ const bulkInsert = async (products) => {
     console.log("Inserted: ", result[0].length);
   }
 };
+const defineIndexes = async () => {
+  const database = await getInstance();
+  await database.query(
+    "DEFINE INDEX priceDelta5days ON TABLE products COLUMNS price_delta_vs_last_five_days;"
+  );
+  await database.query(
+    "DEFINE INDEX priceDeltaYesterday ON TABLE products COLUMNS price_delta_vs_yesterday;"
+  );
+  await database.query(
+    "DEFINE INDEX priceDelta ON TABLE products COLUMNS price_delta;"
+  );
+};
 const closeConnection = async () => {
   await db.close();
 };
@@ -80,4 +92,5 @@ module.exports = {
   bulkInsert,
   getAllItems,
   deleteAllItems,
+  defineIndexes,
 };
