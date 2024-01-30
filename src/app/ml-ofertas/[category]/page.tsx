@@ -1,10 +1,9 @@
 import { ScrappedItem, findDiscountsByParentCategory } from "@/db/ml-ofertas";
 import { calculateDeltaInPercentage, getLatestPrice } from "../utils";
 import VirtualList from "@/components/shared/VirtualList";
-import { ML_CATEGORIES_MAP } from "@/const/ml-categories";
 import { firstLetterToUpperCase } from "@/utils/string";
 import MLProductItem from "../components/MLProductCard";
-
+export const ssg = false;
 const sortByPriceDeltaPercentage = (a: ScrappedItem, b: ScrappedItem) => {
   const aLatestPrice = getLatestPrice(a.price_history);
   const bLatestPrice = getLatestPrice(b.price_history);
