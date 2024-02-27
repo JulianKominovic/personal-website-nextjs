@@ -7,7 +7,7 @@ export function buildHistoricalActivityRecord(
   const records: Record<ActivityHistory["history"][0]["timestamp"], number> =
     {};
   resources.forEach((res) => {
-    const date = new Date(res.updatedAt);
+    const date = new Date(res.updated_at);
 
     const dateRecordEntry: ActivityHistory["history"][0]["timestamp"] = `${date.getFullYear()}/${
       date.getMonth() + 1

@@ -228,11 +228,11 @@ export const PAGE_INDEX = {
   //   title: "Projects",
   //   icon: <BsGridFill />,
   // },
-  // resources: {
-  //   path: "/resources",
-  //   title: "Resources",
-  //   icon: <BsArchiveFill />,
-  // },
+  resources: {
+    path: "/notes",
+    title: "Notes",
+    icon: <BsArchiveFill />,
+  },
   // experiments: {
   //   path: "/experiments",
   //   title: "Experiments",
