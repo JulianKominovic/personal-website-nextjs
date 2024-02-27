@@ -6,7 +6,7 @@ import { MemoModelDB } from "@/db/init";
 import OnlyClientSide from "../shared/OnlyClientSide";
 import { ResourceCardItemOptions } from "./ResourceCardItemOptions";
 
-const ResourceCardItem = forwardRef(function ResourceCardItemInner(
+const ResourceCardItem = forwardRef(async function ResourceCardItemInner(
   {
     resource,
     isAuth,
@@ -16,9 +16,8 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
   },
   ref
 ) {
-  const id = parseInt(
-    (resource.id as unknown as string).replace(new RegExp("[^0-9]", "g"), "")
-  );
+  const id = resource.id;
+
   return (
     <>
       <div className="memo-wrapper memos-3 mb-4 rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-md hover:transition-shadow dark:border-neutral-700 bg-card [&__img]:rounded-lg ">
@@ -38,7 +37,7 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
                 />
               </div>
               <span className="text-sm text-neutral-600 dark:text-neutral-400">
-                JulianKominovic
+                {}
               </span>
             </span>
 
@@ -58,7 +57,7 @@ const ResourceCardItem = forwardRef(function ResourceCardItemInner(
             </svg>
             <OnlyClientSide>
               <span className="text-sm select-none text-neutral-400">
-                {formatTimeAgo(resource.updatedAt)}
+                {formatTimeAgo(resource.updated_at)}
               </span>
             </OnlyClientSide>
             <svg

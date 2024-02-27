@@ -6,8 +6,8 @@ import ResourceCardItem from "./ResourceCardItem";
 function handleCreate(content = "") {
   const memo = {
     content,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
     pinned: false,
   };
   fetch("/api/memos", {
@@ -32,7 +32,7 @@ export default function MarkdownEditorForm() {
     <>
       <p>Add new resource/memo</p>
       <form
-        className="mb-8 flex flex-col items-start justify-start "
+        className="flex flex-col items-start justify-start mb-8 "
         onSubmit={(e) => {
           e.preventDefault();
           handleCreate(
@@ -59,7 +59,7 @@ export default function MarkdownEditorForm() {
           className="mb-2 w-full rounded-md [&_.w-md-editor-toolbar__svg]:h-4 [&_.w-md-editor-toolbar__svg]:w-4 [&_.w-md-editor-toolbar__svg]:font-thin [&_.w-md-editor-preview]:prose"
         />
         <textarea hidden name="content" readOnly defaultValue={previewHTML} />
-        <button className="rounded-md bg-neutral-100 px-2 py-1 hover:bg-neutral-200 dark:bg-neutral-700 dark:hover:bg-neutral-600">
+        <button className="px-2 py-1 rounded-md bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:hover:bg-neutral-600">
           Create resource
         </button>
       </form>
@@ -69,10 +69,11 @@ export default function MarkdownEditorForm() {
       <ResourceCardItem
         isAuth={false}
         resource={{
+          user_id: "0",
           id: "0" as any,
           content: previewHTML,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString(),
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
           pinned: false,
         }}
       />

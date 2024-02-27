@@ -9,9 +9,7 @@ export function ResourceCardItemOptions({
 }: {
   resource: MemoModelDB;
 }) {
-  const id = parseInt(
-    (resource.id as unknown as string).replace(new RegExp("[^0-9]", "g"), "")
-  );
+  const id = resource.id as unknown as string;
   const isPinned = resource.pinned;
   function handleDelete() {
     fetch("/api/memos/" + id, {
@@ -47,7 +45,7 @@ export function ResourceCardItemOptions({
 
   return (
     <Popover.Root>
-      <Popover.Trigger className="group relative flex-grow">
+      <Popover.Trigger className="relative flex-grow group">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -67,10 +65,10 @@ export function ResourceCardItemOptions({
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content
-          className="min-w-[6em] flex-col rounded-lg bg-white p-2 shadow-md"
+          className="min-w-[6em] flex-col rounded-lg bg-card dark:border-neutral-700 border p-2 shadow-md"
           sideOffset={4}
         >
-          <button className="flex w-full items-center rounded-md px-2 py-1 hover:bg-neutral-200">
+          <button className="flex items-center w-full px-2 py-1 rounded-md hover:bg-accent">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -81,7 +79,7 @@ export function ResourceCardItemOptions({
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mr-2 h-auto w-4"
+              className="w-4 h-auto mr-2"
             >
               <path d="M12 20h9" />
               <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
@@ -89,7 +87,7 @@ export function ResourceCardItemOptions({
             Edit
           </button>
 
-          <button className="flex w-full items-center rounded-md px-2 py-1 hover:bg-neutral-200">
+          <button className="flex items-center w-full px-2 py-1 rounded-md hover:bg-accent">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -100,7 +98,7 @@ export function ResourceCardItemOptions({
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mr-2 h-auto w-4"
+              className="w-4 h-auto mr-2"
             >
               <polyline points="16 6 12 2 8 6" />
               <>
@@ -113,7 +111,7 @@ export function ResourceCardItemOptions({
           <hr className="MuiDivider-root MuiDivider-horizontal css-w2e6ki !my-1" />
 
           <button
-            className="flex w-full items-center rounded-md px-2 py-1 text-green-600  hover:bg-neutral-200"
+            className="flex items-center w-full px-2 py-1 text-green-600 rounded-md hover:bg-accent"
             onClick={handleSetPinned}
           >
             <svg
@@ -126,7 +124,7 @@ export function ResourceCardItemOptions({
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mr-2 h-auto w-4"
+              className="w-4 h-auto mr-2"
             >
               <line x1="12" x2="12" y1="7" y2="13" />
               <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
@@ -136,7 +134,7 @@ export function ResourceCardItemOptions({
           </button>
           <button
             onClick={handleDelete}
-            className="flex w-full items-center rounded-md px-2 py-1 text-red-600   hover:bg-neutral-200"
+            className="flex items-center w-full px-2 py-1 text-red-600 rounded-md hover:bg-accent"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +146,7 @@ export function ResourceCardItemOptions({
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mr-2 h-auto w-4"
+              className="w-4 h-auto mr-2"
             >
               <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
               <path d="M3 6h18" />
