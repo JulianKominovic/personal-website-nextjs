@@ -4,7 +4,7 @@ import "./globals.css";
 import clsx from "clsx";
 
 import Script from "next/script";
-
+import { Analytics } from "@vercel/analytics/react";
 import { Inter as FontSans } from "next/font/google";
 import Navbar from "@/layout/header/Navbar";
 
@@ -104,6 +104,7 @@ export default function RootLayout({
           }(document, "script", "twitter-wjs"));
           `}
         </Script>
+        <Analytics />
       </body>
     </html>
   );
